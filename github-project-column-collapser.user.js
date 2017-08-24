@@ -4,7 +4,7 @@
 // @version      0.9
 // @description  Collapses Columns in GitHub project view. Based on a bookmarklet written on a napkin by Daniele Grasso.
 // @author       Vegard Sjonfjell
-// @match        https://github.*.io/*
+// @include      https://github.*.io/*
 // @match        https://github.com/*
 // @grant        none
 // ==/UserScript==
