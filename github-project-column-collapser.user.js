@@ -28,15 +28,13 @@ function collapseColumn(column) {
 
     toggleHideUi(column, colHead, colNameLabel);
 
-    const colHeadStyle = window.getComputedStyle(colHead);
-    const colStyle = window.getComputedStyle(column);
-
-    colNameLabel.style.writingMode = 'vertical-rl';
+    const colHeadHeight = window.getComputedStyle(colHead).height;
+    colNameLabel.style.writingMode = 'vertical-lr';
     colHead.style.cssText = 'border-bottom: 1px solid rgb(229, 229, 229) !important'; // HACK: override !important higher up
     colHead.style.borderRadius = '3px 3px 3px 3px';
     colHead.style.width = '3em';
-    colHead.style.minHeight = '100%';
-    column.style.width = '4em';
+    colHead.style.minHeight = `calc(100% + ${colHeadHeight})`;
+    column.style.width = '3.8em';
 
     column.dataset.collapsed = 'collapsed';
 }
